@@ -42,6 +42,7 @@ app.all('/', routes.index);
 app.post('/new-message', function(req, res) {
 	const message = req.body
   console.log(message);
+  console.log(message.text);
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
 
   if (!message || message.text.toLowerCase().indexOf('marco') <0) {
