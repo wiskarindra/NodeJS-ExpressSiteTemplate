@@ -36,12 +36,12 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+app.all('/', routes.index);
+//app.get('/users', user.list);
 //This is the route the API will call
 app.post('/new-message', function(req, res) {
 	const message = req.body
-
+  console.log(message);
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
 
   if (!message || message.text.toLowerCase().indexOf('marco') <0) {
