@@ -54,7 +54,7 @@ app.post('/new-message', function(req, res) {
   // Respond by hitting the telegram bot API and responding to the approprite chat_id with the word "Polo!!"
   // Remember to use your own API toked instead of the one below  "https://api.telegram.org/bot<your_api_token>/sendMessage"
   axios.post('https://api.telegram.org/bot345596833:AAGDBsKognVh4J4ALq23Sn6bmX-Dt1EfA2A/sendMessage', {
-    chat_id: message.chat.id,
+    chat_id: message.message.chat.id,
     text: 'Bismillah, this bot is under construction'
   })
     .then(response => {
