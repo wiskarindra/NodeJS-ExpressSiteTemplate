@@ -16,8 +16,10 @@
     "express"
   ],
   "dependencies": {
-    "jade": "*",
-    "express": "~3.1.0"
+    "axios": "^0.15.3",
+    "body-parser": "^1.17.1",
+    "express": "~3.1.0",
+    "jade": "*"
   },
   "noAnalyze": true,
   "license": "Apache",
