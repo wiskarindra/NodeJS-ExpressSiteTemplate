@@ -7,8 +7,8 @@
  var mysql      = require('mysql');
  var connection = mysql.createConnection({
    host     : 'localhost',
-   user     : 'tilawah_bot',
-   password : 'tilawah_bot',
+   user     : 'azure',
+   password : 'password',
    port     : 51526,
    database : 'tilawah_bot'
  });
