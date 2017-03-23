@@ -15,7 +15,7 @@
 
 exports.message = function(req, res){
   const message = req.body
-  //console.log(message);
+  console.log(message);
   console.log(message.message.text);
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
 
@@ -37,7 +37,7 @@ exports.message = function(req, res){
       // Remember to use your own API toked instead of the one below  "https://api.telegram.org/bot<your_api_token>/sendMessage"
       axios.post('https://api.telegram.org/bot345596833:AAGDBsKognVh4J4ALq23Sn6bmX-Dt1EfA2A/sendMessage', {
         chat_id: message.message.chat.id,
-        text: 'Bismillah, this bot is under construction'
+        text: 'Bismillah, terima kasih ' + from.first_name + " " + from.last_name
       })
         .then(response => {
           // We get here if the message was successfully posted
