@@ -6,11 +6,11 @@
  const axios = require('axios')
  var mysql      = require('mysql');
  var connection = mysql.createConnection({
-   host     : 'localhost',
-   user     : 'azure',
-   password : 'password',
-   port     : 51526,
-   database : 'tilawah_bot'
+   host     : 'ap-cdbr-azure-east-c.cloudapp.net',
+   user     : 'b4ce711cfa7124',
+   password : 'd06fc412',
+   port     : 3306,
+   database : 'acsm_c127cdcc6120151'
  });
 
 exports.message = function(req, res){
