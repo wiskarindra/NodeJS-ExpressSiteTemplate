@@ -30,7 +30,7 @@ exports.message = function(req, res){
     var target = message.message.text.toLowerCase().split(" ")[1];
     var from = message.message.from
     var post  = {user_id: from.id, user_name: from.first_name + " " + from.last_name, target: target};
-    connection.query('INSERT INTO telegram_user VALUES ?', post, function(err, result) {
+    connection.query('INSERT INTO telegram_user SET ?', post, function(err, result) {
       if (err) throw err
       console.log('masuk')
     })
