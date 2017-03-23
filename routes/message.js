@@ -23,13 +23,13 @@ exports.message = function(req, res){
     // In case a message is not present, or if our message does not have the word marco in it, do nothing and return an empty response
     return res.end()
   }
-  var target = message.message.text.toLowerCase().split(" ")[1];
 
   connection.connect(function(err) {
     if (err) throw err
     console.log('You are now connected...')
+    var target = message.message.text.toLowerCase().split(" ")[1];
     var from = message.message.from
-    var post  = {user_id: from.id, user_name: from.first_name + " " + from.last_name, target: target, created_at: new Date()};
+    var post  = {user_id: from.id, user_name: from.first_name + " " + from.last_name, target: target};
     connection.query('INSERT INTO telegram_user VALUES ?', post, function(err, result) {
       if (err) throw err
       console.log('masuk')
