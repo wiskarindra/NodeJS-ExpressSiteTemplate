@@ -37,7 +37,7 @@ exports.message = function(req, res){
       // Remember to use your own API toked instead of the one below  "https://api.telegram.org/bot<your_api_token>/sendMessage"
       axios.post('https://api.telegram.org/bot345596833:AAGDBsKognVh4J4ALq23Sn6bmX-Dt1EfA2A/sendMessage', {
         chat_id: message.message.chat.id,
-        text: 'Bismillah, terima kasih ' + from.first_name + " " + from.last_name
+        text: 'Bismillah, this bot is under construction'
       })
         .then(response => {
           // We get here if the message was successfully posted
@@ -49,6 +49,10 @@ exports.message = function(req, res){
           console.log('Error :', err)
           res.end('Error :' + err)
         })
-      };
+
+
     })
   })
+
+
+};
