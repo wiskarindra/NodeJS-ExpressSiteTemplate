@@ -4,7 +4,7 @@
  */
 
  const axios = require('axios')
- var connection  = require('express-myconnection');
+ var mysql  = require('express-myconnection');
 
 exports.message = function(req, res){
   const message = req.body
@@ -18,12 +18,12 @@ exports.message = function(req, res){
   }
   var target = message.message.text.toLowerCase().split(" ")[1];
 
-  connection.connect(function(err) {
+  mysql.connect(function(err) {
     if (err) throw err
     console.log('You are now connected...')
     var from = message.message.from
     var post  = {user_id: from.id, user_name: from.first_name + " " + from.last_name, target: target, created_at: new Date()};
-    connection.query('INSERT INTO telegram_user VALUES ?', post, function(err, result) {
+    mysql.query('INSERT INTO telegram_user VALUES ?', post, function(err, result) {
       if (err) throw err
       console.log('masuk')
     })
