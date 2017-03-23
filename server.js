@@ -12,9 +12,6 @@ var express = require('express')
 
 var app = express();
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
-var connection  = require('express-myconnection');
-
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -29,17 +26,6 @@ app.configure(function(){
   app.use(bodyParser.urlencoded({
     extended: true
   })); // for parsing application/x-www-form-urlencoded
-  /*****************mysql connection*******************/
-  app.use(
-      connection(mysql,{
-          host: 'localhost',
-          user: 'root',
-          password : '',
-          port : 51526,
-          database:'tilawah_bot'
-      },'request')
-  );
-  /*****************************************/
 });
 
 app.configure('development', function(){
