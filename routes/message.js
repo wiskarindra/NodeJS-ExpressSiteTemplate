@@ -100,7 +100,7 @@ exports.message = function(req, res){
     {
       console.log('You are now connected...')
       var iqob = message.message.text.toLowerCase().split(" ")[1];
-      var post_group = {group_id: chat.id, group_name: chat.title, created_at: new Date() }
+      var post_group = {group_id: chat.id, group_name: chat.title, iqob: iqob, created_at: new Date() }
       connection.query('INSERT INTO telegram_group SET ?', post_group, function(err, result)
       {
         if (err)
