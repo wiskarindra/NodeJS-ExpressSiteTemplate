@@ -22,7 +22,7 @@ exports.message = function(req, res){
     // In case a message is not present, or if our message does not have the word marco in it, do nothing and return an empty response
     return res.end()
   }
-  if (message == null || message.message ==null || message.message.text){
+  if (message == null || message.message == null || message.message.text == null){
     return res.end()
   }
 
@@ -206,7 +206,7 @@ exports.message = function(req, res){
     })
   }
   else {
-    res.end('ok')
+    return res.end()
   }
 
 };
